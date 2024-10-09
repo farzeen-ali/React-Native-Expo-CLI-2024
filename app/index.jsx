@@ -1,17 +1,33 @@
 import { View, Text, Pressable } from 'react-native';
 import React from 'react';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
+import Animated, { FadeOut, SlideInRight, SlideOutLeft, FadeIn, ZoomIn, ZoomOut } from 'react-native-reanimated';
 
 const Home = () => {
+  const router = useRouter();
   return (
-    <View className="flex-1 justify-center items-center bg-white">
+    <Animated.View
+      // entering={SlideInRight.duration(500)}
+      // exiting={SlideOutLeft.duration(500)}
+      // entering={FadeIn.duration(500)}
+      // exiting={FadeOut.duration(500)}
+      entering={ZoomIn.duration(500)}
+      exiting={ZoomOut.duration(500)}
+      className="flex-1 justify-center items-center bg-white">
       <Text className="text-3xl text-blue-500">Home</Text>
-      <Link href='/about' asChild>
+      {/* <Link href='/about' asChild>
       <Pressable className="bg-blue-600 p-4 rounded-md">
         <Text className="text-white text-center">Go To About</Text>
       </Pressable>
-      </Link>
-    </View>
+      </Link> */}
+      <Pressable
+        className="bg-blue-600 p-4 rounded-md"
+        onPress={() => router.push('/about')}
+      >
+        <Text className="text-white text-center">Go to About</Text>
+      </Pressable>
+
+    </Animated.View>
   );
 };
 
