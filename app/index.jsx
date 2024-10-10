@@ -26,6 +26,12 @@ const Home = () => {
       >
         <Text className="text-white text-center">Go to About</Text>
       </Pressable>
+      <Pressable
+        className="bg-green-600 p-4 rounded-md"
+        onPress={() => router.push('/tabs')}
+      >
+        <Text className="text-white text-center">Go to Tab Screen</Text>
+      </Pressable>
 
     </Animated.View>
   );
