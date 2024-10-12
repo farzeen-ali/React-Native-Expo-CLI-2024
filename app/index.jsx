@@ -42,6 +42,12 @@ const Home = () => {
       >
         <Text className="text-white text-center">Go to Tab Screen</Text>
       </Pressable>
+      <Pressable
+        className="bg-indigo-600 p-4 rounded-md mt-4"
+        onPress={() => router.push('/userInfo')}
+      >
+        <Text className="text-white text-center">Go to User Screen</Text>
+      </Pressable>
     </Animated.View>
   );
 };
