@@ -54,6 +54,12 @@ const Home = () => {
       >
         <Text className="text-white text-center">Go to Profile Screen</Text>
       </Pressable>
+      <Pressable
+        className="bg-orange-600 p-4 rounded-md mt-4"
+        onPress={() => router.push('/register')}
+      >
+        <Text className="text-white text-center">Register</Text>
+      </Pressable>
     </Animated.View>
   );
 };
